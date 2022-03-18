@@ -1,11 +1,14 @@
 import { headerModal } from "./modules/headerModal";
+import { ruler } from "./modules/ruler";
+import { timer } from "./modules/timer";
 
-const modalWindow = document.getElementById("header-modal");
-const modalButton = document.getElementById("headerModalButton");
+const headerModalWindow = document.getElementById("header-modal");
+const headerModalButton = document.getElementById("headerModalButton");
 const headerModalClose = document.getElementById("headerModalClose");
 const overlay = document.querySelector(".overlay");
-console.log(modalWindow);
-console.log(modalButton);
-// console.log(headerModalClose);
 
-headerModal(modalWindow, modalButton, headerModalClose, overlay);
+// const servicesModalClose = document.getElementById("headerModalClose");
+
+headerModal(headerModalWindow, headerModalButton, headerModalClose, overlay);
+ruler(overlay);
+setTimeout(timer, 1, "26 march 2022")

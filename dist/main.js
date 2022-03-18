@@ -16,7 +16,7 @@
   \******************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_headerModal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/headerModal */ \"./modules/headerModal.js\");\n\r\n\r\nconst modalWindow = document.getElementById(\"header-modal\");\r\nconst modalButton = document.getElementById(\"headerModalButton\");\r\nconst headerModalClose = document.getElementById(\"headerModalClose\");\r\nconst overlay = document.querySelector(\".overlay\");\r\nconsole.log(modalWindow);\r\nconsole.log(modalButton);\r\n// console.log(headerModalClose);\r\n\r\n(0,_modules_headerModal__WEBPACK_IMPORTED_MODULE_0__.headerModal)(modalWindow, modalButton, headerModalClose, overlay);\r\n\n\n//# sourceURL=webpack:///./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_headerModal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/headerModal */ \"./modules/headerModal.js\");\n/* harmony import */ var _modules_ruler__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/ruler */ \"./modules/ruler.js\");\n/* harmony import */ var _modules_timer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/timer */ \"./modules/timer.js\");\n\r\n\r\n\r\n\r\nconst headerModalWindow = document.getElementById(\"header-modal\");\r\nconst headerModalButton = document.getElementById(\"headerModalButton\");\r\nconst headerModalClose = document.getElementById(\"headerModalClose\");\r\nconst overlay = document.querySelector(\".overlay\");\r\n\r\n// const servicesModalClose = document.getElementById(\"headerModalClose\");\r\n\r\n(0,_modules_headerModal__WEBPACK_IMPORTED_MODULE_0__.headerModal)(headerModalWindow, headerModalButton, headerModalClose, overlay);\r\n(0,_modules_ruler__WEBPACK_IMPORTED_MODULE_1__.ruler)(overlay);\r\nsetTimeout(_modules_timer__WEBPACK_IMPORTED_MODULE_2__.timer, 1, \"26 march 2022\")\r\n\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ }),
 
@@ -27,6 +27,26 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"headerModal\": () => (/* binding */ headerModal)\n/* harmony export */ });\nconst headerModal = (window, button, close, overlay) => {\r\n    button.addEventListener(\"click\", () => {\r\n        window.style.display = \"block\";\r\n        overlay.style.display = \"block\";\r\n    });\r\n    close.addEventListener(\"click\", () => {\r\n        window.style.display = \"none\";\r\n        overlay.style.display = \"none\";\r\n    });\r\n};\r\n\n\n//# sourceURL=webpack:///./modules/headerModal.js?");
+
+/***/ }),
+
+/***/ "./modules/ruler.js":
+/*!**************************!*\
+  !*** ./modules/ruler.js ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"ruler\": () => (/* binding */ ruler)\n/* harmony export */ });\nconst ruler = (overlay) => {\r\n    const servicesButtons = document.querySelectorAll(\".btn-sm\");\r\n    const servicesModalWindow = document.querySelector(\".services-modal\");\r\n    const servicesModalClose = document.querySelector(\".services-modal__close\");\r\n\r\n    servicesButtons.forEach((btn) => {\r\n        btn.addEventListener(\"click\", () => {\r\n            servicesModalWindow.style.display = \"block\";\r\n            overlay.style.display = \"block\";\r\n        });\r\n    });\r\n    servicesModalClose.addEventListener(\"click\", () => {\r\n        servicesModalWindow.style.display = \"none\";\r\n        overlay.style.display = \"none\";\r\n    });\r\n};\r\n\n\n//# sourceURL=webpack:///./modules/ruler.js?");
+
+/***/ }),
+
+/***/ "./modules/timer.js":
+/*!**************************!*\
+  !*** ./modules/timer.js ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"timer\": () => (/* binding */ timer)\n/* harmony export */ });\nconst timer = (deadline) => {\r\n    const timerDays = document.getElementById(\"timer-days\");\r\n    const timerHours = document.getElementById(\"timer-hours\");\r\n    const timerMinutes = document.getElementById(\"timer-minutes\");\r\n    const timerSeconds = document.getElementById(\"timer-seconds\");\r\n};\r\n\n\n//# sourceURL=webpack:///./modules/timer.js?");
 
 /***/ })
 
