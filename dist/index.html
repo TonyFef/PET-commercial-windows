@@ -66,7 +66,7 @@
 	      				<a href="tel:89876543210">+7 (987) <strong>654-32-10</strong></a>
 	      			</div>
 	      			<div class="top-btn pull-left">
-	      				<a href="#callback" class="btn btn-warning btn-md fancyboxModal">Заказать звонок!</a>
+	      				<a href="#callback" class="btn btn-warning btn-md fancyboxModal" >Заказать звонок!</a>
 	      			</div>
 	      		</div>
           	</div>
@@ -88,7 +88,7 @@
 						<div class="col-sm-12 col-lg-6">
 							<div class="phone"><a href="tel:89876543210">+7 (987) <span class="text-normal">654-32-10</span></a></div>
 						</div>
-						<div class="col-sm-12 col-lg-6">
+						<div class="col-sm-12 col-lg-6"  id="headerModalButton">
 							<div class="button"><a href="#callback" class="btn btn-warning btn-block fancyboxModal"><i class="phone-icon"></i> Заказать звонок!</a></div>
 						</div>
 					</div>
@@ -531,7 +531,7 @@
             // Необходимо указать данный тип макета.
             iconLayout: 'default#image',
             // Своё изображение иконки метки.
-            iconImageHref: 'images/marker.png',
+            // iconImageHref: 'images/marker.png',
             // Размеры метки.
             iconImageSize: [30, 42],
             // Смещение левого верхнего угла иконки относительно
@@ -657,7 +657,7 @@
 
 	<div class="overlay"></div>
 
-	<div class="header-modal header-modal--opened">
+	<div class="header-modal header-modal--opened" id="header-modal">
 		<div class="fancybox-skin" style="padding: 0px; width: auto; height: auto;">
 			<div class="fancybox-outer">
 				<div class="fancybox-inner" style="overflow: hidden; width: 580px; height: 495px;">
@@ -681,7 +681,7 @@
             </form>
             <span class="help-block">Гарантируем 100% конфиденциальность. Ваша информация не будет распространяться.</span>
         </div>
-    </div></div></div><span title="Close" class="header-modal__close">x</span></div></div>
+    </div></div></div><span title="Close" class="header-modal__close" id="headerModalClose">x</span></div></div>
 
 	<div class="services-modal services-modal--opened">
 			<div class="fancybox-skin" style="padding: 0px; width: auto; height: auto;">

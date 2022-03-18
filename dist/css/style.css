@@ -1077,6 +1077,9 @@ p.services-image_mobile {
 .box-modal h4 {
     margin-top: 30px;
 }
+.show {
+    display: block;
+}
 @media (max-width: 1850px) {
     #offer .container {
         height: 650px;
