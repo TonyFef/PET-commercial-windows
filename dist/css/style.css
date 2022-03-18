@@ -1078,7 +1078,20 @@ p.services-image_mobile {
     margin-top: 30px;
 }
 .show {
-    display: block;
+    height: 80vh;
+    position: fixed;
+    top: 10%;
+    left: 33%;
+    z-index: 100;
+}
+.big-doc {
+    width: 1vw;
+    height: 1vh;
+}
+.none {
+    display: none;
+    opacity: 0;
+    height: 0;
 }
 @media (max-width: 1850px) {
     #offer .container {
