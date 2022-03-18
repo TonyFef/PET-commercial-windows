@@ -4,6 +4,11 @@ export const timer = (deadline) => {
     const timerMinutes = document.getElementById("timer-minutes");
     const timerSeconds = document.getElementById("timer-seconds");
 
+    const timerDaysSecond = document.querySelector("#count1");
+    const timerHoursSecond = document.querySelector("#count2");
+    const timerMinutesSecond = document.querySelector("#count3");
+    const timerSecondsSecond = document.querySelector("#count4");
+
     const getTimeRemaining = () => {
         let dateStop = new Date(deadline).getTime();
         let dateNow = new Date().getTime();
@@ -26,6 +31,15 @@ export const timer = (deadline) => {
         let minutesShower = getTime.minutes < 10 ? (timerMinutes.textContent = `0${getTime.minutes}`) : (timerMinutes.textContent = getTime.minutes);
         let secondsShower = getTime.seconds < 10 ? (timerSeconds.textContent = `0${getTime.seconds}`) : (timerSeconds.textContent = getTime.seconds);
         let daysShower = getTime.days < 10 ? (timerDays.textContent = `0${getTime.days}`) : (timerDays.textContent = getTime.days);
+        let hoursShower = getTime.hours < 10 ? (timerHours.textContent = `0${getTime.hours}`) : (timerHours.textContent = timerHours.days);
+
+        let minutesShowerSecond =
+            getTime.minutes < 10 ? (timerMinutesSecond.textContent = `0${getTime.minutes}`) : (timerMinutesSecond.textContent = getTime.minutes);
+        let secondsShowerSecond =
+            getTime.seconds < 10 ? (timerSecondsSecond.textContent = `0${getTime.seconds}`) : (timerSecondsSecond.textContent = getTime.seconds);
+        let daysShowerSecond = getTime.days < 10 ? (timerDaysSecond.textContent = `0${getTime.days}`) : (timerDaysSecond.textContent = getTime.days);
+        let hoursShowerSecond =
+            getTime.hours < 10 ? (timerHoursSecond.textContent = `0${getTime.hours}`) : (timerHoursSecond.textContent = timerHours.days);
 
         if (getTime.timeRemaining < 0) {
             timerDays.textContent = "00";

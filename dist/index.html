@@ -14,6 +14,8 @@
 	<link href="./fonts/font.css" rel="stylesheet" type="text/css">
 	<link href="./css/style.css" rel="stylesheet">
 	<link href="./css/animate.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+/>
 	<script defer src="./main.js"></script>
 	<title>Установка пластиковых (ПВХ) окон</title>
 	<meta name="keywords" content="пластиковые, окна, пвх, вставить, века, дом, профиль, поставить, установить, установка, стандартные, цветные, сайт, современные, купить, фирма, цены, дешевые, стоимость, остекление, монтаж">
@@ -138,31 +140,31 @@
     			<div class="heading-image"><i class="benefit-ico"></i></div>
     			<h2 class="heading"><span>Выгоды</span> для клиентов</h2>
     		</div>
-    		<div class="benefits-inner">
-				<div class="benefits-wrap">
-					<div class="benefits__item">
+    		<div class="benefits-inner swiper">
+				<div class="benefits-wrap swiper-wrapper">
+					<div class="benefits__item swiper-slide">
 						<p class="benefit-image">
 								<img src="images/benefits/4.png" alt="">
 							</p>
 							<p class="benefit-title">Рассрочка без банка </p>
 					</div>
-					<div class="benefits__item">
+					<div class="benefits__item swiper-slide">
 						<p class="benefit-image"><img src="images/benefits/2.png" alt=""></p>
 						<p class="benefit-title">Гарантии от 3 до 10 лет</p>
 					</div>
-					<div class="benefits__item">
+					<div class="benefits__item swiper-slide">
 						<p class="benefit-image"><img src="images/benefits/3.png" alt=""></p>
 						<p class="benefit-title">Индивидуальный подход</p>
 					</div>
-					<div class="benefits__item">
+					<div class="benefits__item swiper-slide">
 						<p class="benefit-image"><img src="images/benefits/1.png" alt=""></p>
 						<p class="benefit-title">Бесплатные консультации</p>
 					</div>
-					<div class="benefits__item">
+					<div class="benefits__item swiper-slide">
 						<p class="benefit-image"><img src="images/benefits/5.png" alt=""></p>
 						<p class="benefit-title">Бесплатный выезд мастера на дом</p>
 					</div>
-					<div class="benefits__item">
+					<div class="benefits__item swiper-slide">
 						<p class="benefit-image"><img src="images/benefits/6.png" alt=""></p>
 						<p class="benefit-title">Окна от лучших производителей</p>
 					</div>
@@ -170,7 +172,7 @@
     			
     			</div>
 				<div class="benefits-arrows">
-					<div class="benefits__arrow benefits__arrow--left">
+					<div class="benefits__arrow benefits__arrow--left ">
 						<img src="images/benefits/left-arrow.svg" alt="">
 					</div>
 					<div class="benefits__arrow benefits__arrow--right">
@@ -452,10 +454,10 @@
     					<div class="countdown" data-days="7">
 							<div class="countdown-text">До конца акции осталось:
 								<div class="count-wrap">
-									<div class="count count_1">Дней:</br> <span>01</span></div>
-									<div class="count count_2">Часов:</br> <span>02</span></div>
-									<div class="count count_3">Минут:</br> <span>03</span></div>
-									<div class="count count_4">Секунд:</br> <span>04</span></div>
+									<div class="count count_1">Дней:</br> <span id="count1">01</span></div>
+									<div class="count count_2">Часов:</br> <span id="count2">02</span></div>
+									<div class="count count_3">Минут:</br> <span id="count3">03</span></div>
+									<div class="count count_4">Секунд:</br> <span id="count4">04</span></div>
 								</div>
 							</div>
 						</div>
