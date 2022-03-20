@@ -6,8 +6,10 @@ export const modal = (overlay) => {
     const headerModalWindow = document.getElementById("header-modal");
     const servicesModalWindow = document.querySelector(".services-modal");
     const modalCloseBtns = document.getElementsByClassName("modal__close");
+    const docsImg = document.querySelectorAll(".sertificate-document");
 
     const btnForModal = document.getElementsByClassName("btn-modal");
+    const docsForModal = document.getElementsByClassName("doc-modal");
 
     for (let button of btnForModal) {
         button.addEventListener("click", (e) => {
@@ -22,54 +24,67 @@ export const modal = (overlay) => {
                 servicesModalWindow.style.display = "block";
                 overlay.style.display = "block";
                 fixWhenScrollModal();
-            } else if (button.classList.contains("document-overlay")) {
-                const docsImg = document.querySelectorAll(".sertificate-document");
-
-                docsImg.forEach((doc) => {
-                    doc.addEventListener("mouseenter", (e) => {
-                        const docLink = e.target.closest("a");
-                        const overlay2 = docLink.querySelector(".document-overlay");
-                        animate({
-                            duration: 150,
-                            timing(timeFraction) {
-                                return timeFraction;
-                            },
-                            draw(progress) {
-                                overlay2.style.opacity = progress;
-                            },
-                        });
-                    });
-                    doc.addEventListener("mouseleave", (e) => {
-                        const docLink = e.target.closest("a");
-                        const overlay2 = docLink.querySelector(".document-overlay");
-
-                        animate({
-                            duration: 150,
-                            timing(timeFraction) {
-                                return timeFraction;
-                            },
-                            draw(progress) {
-                                overlay2.style.opacity = progress / progress - progress;
-                            },
-                        });
-                    });
-                    doc.addEventListener("click", (e) => {
-                        const docModal = document.querySelector("#bigDoc");
-                        docModal.classList.add("show");
-                        docModal.classList.remove("none");
-                        overlay.style.display = "block";
-                        e.preventDefault();
-
-                        overlay.addEventListener("click", (e) => {
-                            e.preventDefault();
-                            docModal.classList.add("none");
-                            overlay.style.display = "none";
-                        });
-                    });
-                });
             }
         });
+
+        docsImg.forEach((doc) => {
+            doc.addEventListener("mouseenter", (e) => {
+                const docLink = e.target.closest("a");
+                const overlay2 = docLink.querySelector(".document-overlay");
+                animate({
+                    duration: 150,
+                    timing(timeFraction) {
+                        return timeFraction;
+                    },
+                    draw(progress) {
+                        overlay2.style.opacity = progress;
+                    },
+                });
+            });
+            doc.addEventListener("mouseleave", (e) => {
+                const docLink = e.target.closest("a");
+                const overlay2 = docLink.querySelector(".document-overlay");
+
+                animate({
+                    duration: 150,
+                    timing(timeFraction) {
+                        return timeFraction;
+                    },
+                    draw(progress) {
+                        overlay2.style.opacity = progress / progress - progress;
+                    },
+                });
+            });
+        });
     }
+
+    for (let doc of docsForModal) {
+        doc.addEventListener("click", (e) => {
+            console.log(docsForModal);
+            e.preventDefault();
+            // let docModal = 0;
+            let docModal = document.querySelector("#bigDoc");
+            console.log(docModal);
+            docModal.classList.add("show");
+            docModal.classList.remove("none");
+            overlay.style.display = "block";
+            fixWhenScrollModal();
+
+            overlay.addEventListener(
+                "click",
+                (e) => {
+                    e.preventDefault();
+                    headerModalWindow.style.display = "none";
+                    servicesModalWindow.style.display = "none";
+                    docModal.classList.add("none");
+                    overlay.style.display = "none";
+                    closeWhenScrollModal();
+                },
+                { once: true }
+            );
+        });
+    }
+
     for (let button of modalCloseBtns) {
         button.addEventListener("click", () => {
             headerModalWindow.style.display = "none";
