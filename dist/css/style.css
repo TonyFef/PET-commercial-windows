@@ -1594,6 +1594,10 @@ input.error {
     justify-content: space-between;
     margin: 0 auto;
 }
+.swiper-wrapper {
+    margin-left: 0;
+    transform: translate3d(0px, 0px, 0px);
+}
 
 .benefits__item {
     width: 100%;

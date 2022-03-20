@@ -3,7 +3,7 @@ import { animate } from "./helpers";
 export const documents = (secondOverlay) => {
     const docsImg = document.querySelectorAll(".sertificate-document");
     // const docsOverlays = document.querySelectorAll(".document-overlay");
-    console.log(docsImg);
+    // console.log(docsImg);
 
     docsImg.forEach((doc) => {
         doc.addEventListener("mouseenter", (e) => {
