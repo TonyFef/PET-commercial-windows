@@ -9,12 +9,20 @@ export const modal = (overlay) => {
 
     for (let button of btnForModal) {
         button.addEventListener("click", () => {
+            document.body.style.position = "";
+            document.body.style.top = "";
             if (button.classList.contains("btn-block")) {
                 headerModalWindow.style.display = "block";
                 overlay.style.display = "block";
+                let scrollY = window.scrollY;
+                document.body.style.position = "fixed";
+                document.body.style.top = `-${scrollY}px`;
             } else if (button.classList.contains("btn-sm")) {
                 servicesModalWindow.style.display = "block";
                 overlay.style.display = "block";
+                let scrollY = window.scrollY;
+                document.body.style.position = "fixed";
+                document.body.style.top = `-${scrollY}px`;
             }
         });
     }
@@ -23,7 +31,10 @@ export const modal = (overlay) => {
             headerModalWindow.style.display = "none";
             servicesModalWindow.style.display = "none";
             overlay.style.display = "none";
-            
+            const scrollY = document.body.style.top;
+            document.body.style.position = "";
+            document.body.style.top = "";
+            window.scrollTo(0, parseInt(scrollY || "0") * -1);
         });
     }
 };
