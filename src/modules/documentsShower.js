@@ -4,6 +4,8 @@ export const shower = () => {
     bigDoc.src = "images/documents/original/document4.jpg";
     bigDoc.id = "bigDoc";
     bigDoc.classList.add("none");
+    // bigDoc.innerHTML = `<span title="Close" class="add-modal__close modal__close">x</span>`
     docsSection.append(bigDoc);
+    // console.log(bigDoc);
 };
 // shower();

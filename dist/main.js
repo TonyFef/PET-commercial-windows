@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
   \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"shower\": () => (/* binding */ shower)\n/* harmony export */ });\nconst shower = () => {\r\n    const docsSection = document.getElementById(\"documents\");\r\n    const bigDoc = document.createElement(\"img\");\r\n    bigDoc.src = \"images/documents/original/document4.jpg\";\r\n    bigDoc.id = \"bigDoc\";\r\n    bigDoc.classList.add(\"none\");\r\n    docsSection.append(bigDoc);\r\n};\r\n// shower();\r\n\n\n//# sourceURL=webpack:///./modules/documentsShower.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"shower\": () => (/* binding */ shower)\n/* harmony export */ });\nconst shower = () => {\r\n    const docsSection = document.getElementById(\"documents\");\r\n    const bigDoc = document.createElement(\"img\");\r\n    bigDoc.src = \"images/documents/original/document4.jpg\";\r\n    bigDoc.id = \"bigDoc\";\r\n    bigDoc.classList.add(\"none\");\r\n    // bigDoc.innerHTML = `<span title=\"Close\" class=\"add-modal__close modal__close\">x</span>`\r\n    docsSection.append(bigDoc);\r\n    // console.log(bigDoc);\r\n};\r\n// shower();\r\n\n\n//# sourceURL=webpack:///./modules/documentsShower.js?");
 
 /***/ }),
 
