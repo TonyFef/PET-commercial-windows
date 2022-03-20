@@ -11,6 +11,7 @@ const overlay = document.querySelector(".overlay");
 
 headerModal(headerModalWindow, headerModalButton, headerModalClose, overlay);
 ruler(overlay);
-setTimeout(timer, 1, "26 march 2022");
+timer("26 march 2022");
+// setTimeout(timer, 1, "26 march 2022");
 documents(overlay);
 swiper();

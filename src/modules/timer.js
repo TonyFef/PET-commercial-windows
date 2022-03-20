@@ -1,13 +1,8 @@
 export const timer = (deadline) => {
-    const timerDays = document.getElementById("timer-days");
-    const timerHours = document.getElementById("timer-hours");
-    const timerMinutes = document.getElementById("timer-minutes");
-    const timerSeconds = document.getElementById("timer-seconds");
-
-    const timerDaysSecond = document.querySelector("#count1");
-    const timerHoursSecond = document.querySelector("#count2");
-    const timerMinutesSecond = document.querySelector("#count3");
-    const timerSecondsSecond = document.querySelector("#count4");
+    const timerDays = document.getElementsByClassName("count1");
+    const timerHours = document.getElementsByClassName("count2");
+    const timerMinutes = document.getElementsByClassName("count3");
+    const timerSeconds = document.getElementsByClassName("count4");
 
     const getTimeRemaining = () => {
         let dateStop = new Date(deadline).getTime();
@@ -23,25 +18,20 @@ export const timer = (deadline) => {
     const updateClock = () => {
         let getTime = getTimeRemaining();
 
-        if (getTime.hours < 10) {
-            timerHours.textContent = `0${getTime.hours}`;
-        } else {
-            timerHours.textContent = getTime.hours;
+        for (let item of timerDays) {
+            getTime.days < 10 ? (item.textContent = `0${getTime.days}`) : (item.textContent = getTime.days);
         }
-        let minutesShower = getTime.minutes < 10 ? (timerMinutes.textContent = `0${getTime.minutes}`) : (timerMinutes.textContent = getTime.minutes);
-        let secondsShower = getTime.seconds < 10 ? (timerSeconds.textContent = `0${getTime.seconds}`) : (timerSeconds.textContent = getTime.seconds);
-        let daysShower = getTime.days < 10 ? (timerDays.textContent = `0${getTime.days}`) : (timerDays.textContent = getTime.days);
-        let hoursShower = getTime.hours < 10 ? (timerHours.textContent = `0${getTime.hours}`) : (timerHours.textContent = timerHours.days);
+        for (let item of timerHours) {
+            getTime.hours < 10 ? (item.textContent = `0${getTime.hours}`) : (item.textContent = getTime.hours);
+        }
+        for (let item of timerMinutes) {
+            getTime.minutes < 10 ? (item.textContent = `0${getTime.minutes}`) : (item.textContent = getTime.minutes);
+        }
+        for (let item of timerSeconds) {
+            getTime.seconds < 10 ? (item.textContent = `0${getTime.seconds}`) : (item.textContent = getTime.seconds);
+        }
 
-        let minutesShowerSecond =
-            getTime.minutes < 10 ? (timerMinutesSecond.textContent = `0${getTime.minutes}`) : (timerMinutesSecond.textContent = getTime.minutes);
-        let secondsShowerSecond =
-            getTime.seconds < 10 ? (timerSecondsSecond.textContent = `0${getTime.seconds}`) : (timerSecondsSecond.textContent = getTime.seconds);
-        let daysShowerSecond = getTime.days < 10 ? (timerDaysSecond.textContent = `0${getTime.days}`) : (timerDaysSecond.textContent = getTime.days);
-        let hoursShowerSecond =
-            getTime.hours < 10 ? (timerHoursSecond.textContent = `0${getTime.hours}`) : (timerHoursSecond.textContent = timerHours.days);
-
-        if (getTime.timeRemaining < 0) {
+        if (getTime.timeRemaining <= 0) {
             timerDays.textContent = "00";
             timerHours.textContent = "00";
             timerMinutes.textContent = "00";
