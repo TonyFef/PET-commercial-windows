@@ -768,10 +768,11 @@ p.services-image_mobile {
 .document-overlay {
     background: url("../images/zoom.png") no-repeat center rgba(79, 104, 110, 0.42);
     position: absolute;
-    width: 100%;
+    width: 200px;
+    align-self: center;
     height: 100%;
     top: 0;
-    left: 0;
+    left: 25%;
     opacity: 0;
 }
 .document-inner:hover .document-overlay {
@@ -1081,7 +1082,7 @@ p.services-image_mobile {
     height: 80vh;
     position: fixed;
     top: 10%;
-    left: 33%;
+    left: 37%;
     z-index: 100;
 }
 .big-doc {
