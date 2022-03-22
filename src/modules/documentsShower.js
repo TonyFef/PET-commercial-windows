@@ -6,6 +6,4 @@ export const shower = () => {
     bigDoc.classList.add("none");
     // bigDoc.innerHTML = `<span title="Close" class="add-modal__close modal__close">x</span>`
     docsSection.append(bigDoc);
-    // console.log(bigDoc);
 };
-// shower();

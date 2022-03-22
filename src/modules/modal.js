@@ -60,11 +60,8 @@ export const modal = (overlay) => {
 
     for (let doc of docsForModal) {
         doc.addEventListener("click", (e) => {
-            console.log(docsForModal);
             e.preventDefault();
-            // let docModal = 0;
             let docModal = document.querySelector("#bigDoc");
-            console.log(docModal);
             docModal.classList.add("show");
             docModal.classList.remove("none");
             overlay.style.display = "block";
