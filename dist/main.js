@@ -59,7 +59,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \***************************/
 /***/ (() => {
 
-eval("\r\n    new Swiper(\".benefits-inner\", {\r\n        centeredSlides: true,\r\n        centeredSlides: true,\r\n        breakpoints: {\r\n            640: {\r\n                slidesPerView: 1,\r\n                spaceBetween: 20,\r\n            },\r\n            768: {\r\n                slidesPerView: 2,\r\n                spaceBetween: 40,\r\n            },\r\n            1024: {\r\n                slidesPerView: 2,\r\n                spaceBetween: 100,\r\n            },\r\n        },\r\n        navigation: {\r\n            nextEl: \".benefits__arrow--right\",\r\n            prevEl: \".benefits__arrow--left\",\r\n        },\r\n    });\r\n\n\n//# sourceURL=webpack:///./modules/swiper.js?");
+eval("new Swiper(\".benefits-inner\", {\r\n    // centeredSlides: true,\r\n    // rewind: true,\r\n    loop: true,\r\n    breakpoints: {\r\n        576: {\r\n            slidesPerView: 1,\r\n            // spaceBetween: 20,\r\n        },\r\n        768: {\r\n            slidesPerView: 2,\r\n            spaceBetween: 40,\r\n        },\r\n        1024: {\r\n            slidesPerView: 3,\r\n            spaceBetween: 100,\r\n        },\r\n    },\r\n    navigation: {\r\n        nextEl: \".benefits__arrow--right\",\r\n        prevEl: \".benefits__arrow--left\",\r\n    },\r\n});\r\n\n\n//# sourceURL=webpack:///./modules/swiper.js?");
 
 /***/ }),
 

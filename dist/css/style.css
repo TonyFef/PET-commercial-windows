@@ -492,7 +492,7 @@ input.error {
 }
 .benefits-inner {
     text-align: center;
-    
+    max-width: 700px;
 }
 .benefit-image {
     margin-bottom: 22px;
@@ -1330,6 +1330,10 @@ p.services-image_mobile {
     .offer-heading {
         max-width: 75%;
     }
+    .benefits-inner {
+        text-align: center;
+        max-width: 350px;
+    }
 }
 @media (max-width: 580px) {
     .service-image {
@@ -1345,6 +1349,10 @@ p.services-image_mobile {
     }
     .offer-utp {
         width: 100%;
+    }
+    .benefits-inner {
+        text-align: center;
+        max-width: 185px;
     }
 }
 @media (max-width: 480px) {
