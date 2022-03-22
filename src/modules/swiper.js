@@ -1,15 +1,6 @@
-// import { Autoplay } from "swiper";
-import Swiper, { Autoplay } from "swiper";
-// Swiper.use([Autoplay]);
 
-export const swiper = () => {
-    const swiper = new Swiper(".swiper", {
-        slidesPerView: 1,
-        spaceBetween: 10,
-        autoplay: {
-            delay: 2500,
-            disableOnInteraction: false,
-        },
+    new Swiper(".benefits-inner", {
+        centeredSlides: true,
         centeredSlides: true,
         breakpoints: {
             640: {
@@ -21,9 +12,12 @@ export const swiper = () => {
                 spaceBetween: 40,
             },
             1024: {
-                slidesPerView: 3,
-                spaceBetween: 50,
+                slidesPerView: 2,
+                spaceBetween: 100,
             },
         },
+        navigation: {
+            nextEl: ".benefits__arrow--right",
+            prevEl: ".benefits__arrow--left",
+        },
     });
-};

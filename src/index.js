@@ -7,5 +7,5 @@ const overlay = document.querySelector(".overlay");
 
 modal(overlay);
 timer("26 march 2022");
-// swiper();
+swiper();
 shower();

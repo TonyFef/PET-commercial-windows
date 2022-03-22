@@ -492,6 +492,7 @@ input.error {
 }
 .benefits-inner {
     text-align: center;
+    
 }
 .benefit-image {
     margin-bottom: 22px;
@@ -1600,10 +1601,10 @@ input.error {
 .benefits-wrap {
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;
+    /* margin: 0 auto; */
+    min-width: 0;
 }
 .swiper-wrapper {
-    margin-left: 0;
     transform: translate3d(0px, 0px, 0px);
 }
 
