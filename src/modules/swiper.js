@@ -1,6 +1,6 @@
 export const swiper = (swiper1, swiper2) => {
     new Swiper(swiper1, {
-        loop: true,
+        // loop: true,
         breakpoints: {
             576: {
                 slidesPerView: 1,
@@ -22,7 +22,7 @@ export const swiper = (swiper1, swiper2) => {
     });
 
     new Swiper(swiper2, {
-        loop: true,
+        // loop: true,
         breakpoints: {
             576: {
                 slidesPerView: 2,
