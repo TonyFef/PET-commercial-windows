@@ -22,8 +22,11 @@
     <link href="fonts/font.css" rel="stylesheet" type="text/css" />
     <link href="css/style.css" rel="stylesheet" />
     <link href="css/animate.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
 
-    <script defer src="./main.js"></script>
+      <script defer src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+      <script defer src="./main.js"></script>
     <title>Шкафы-купе и кухни</title>
     <meta
       name="keywords"
@@ -117,11 +120,11 @@
                   >
                 </div>
               </div>
-              <div class="col-sm-12 col-lg-6">
+              <div class="col-sm-12 col-lg-6" id="headerModalButton">
                 <div class="button">
                   <a
                     href="#callback"
-                    class="btn btn-warning btn-block fancyboxModal"
+                    class="btn btn-warning btn-block fancyboxModal btn-modal"
                     ><i class="phone-icon"></i> Заказать звонок!</a
                   >
                 </div>
@@ -215,39 +218,39 @@
           <div class="heading-image"><i class="benefit-ico"></i></div>
           <h2 class="heading"><span>Выгоды</span> для клиентов</h2>
         </div>
-        <div class="benefits-inner">
-          <div class="benefits-wrap">
-            <div class="benefits__item">
+        <div class="benefits-inner swiper">
+          <div class="benefits-wrap swiper-wrapper">
+            <div class="benefits__item swiper-slide">
               <p class="benefit-image">
                 <img src="images/benefits/4.png" alt="" />
               </p>
               <p class="benefit-title">Рассрочка без банка</p>
             </div>
-            <div class="benefits__item">
+            <div class="benefits__item swiper-slide">
               <p class="benefit-image">
                 <img src="images/benefits/2.png" alt="" />
               </p>
               <p class="benefit-title">Гарантии от 3 до 10 лет</p>
             </div>
-            <div class="benefits__item">
+            <div class="benefits__item swiper-slide">
               <p class="benefit-image">
                 <img src="images/benefits/3.png" alt="" />
               </p>
               <p class="benefit-title">Индивидуальный подход</p>
             </div>
-            <div class="benefits__item">
+            <div class="benefits__item swiper-slide">
               <p class="benefit-image">
                 <img src="images/benefits/1.png" alt="" />
               </p>
               <p class="benefit-title">Бесплатные консультации</p>
             </div>
-            <div class="benefits__item">
+            <div class="benefits__item swiper-slide">
               <p class="benefit-image">
                 <img src="images/benefits/5.png" alt="" />
               </p>
               <p class="benefit-title">Бесплатный выезд мастера на дом</p>
             </div>
-            <div class="benefits__item">
+            <div class="benefits__item swiper-slide">
               <p class="benefit-image">
                 <img src="images/benefits/6.png" alt="" />
               </p>
@@ -272,329 +275,331 @@
           <div class="heading-image"><i class="service-ico"></i></div>
           <h2 class="heading white">Наши <span>услуги</span></h2>
         </div>
-        <div class="row">
-          <div class="col-md-12 col-lg-6">
-            <div class="service-block">
-              <div class="service-image">
-                <img src="images/services/9.jpg" alt="" />
-                <a
-                  href="images/services/original/standart_kuhni/1.jpg"
-                  data-fancybox-group="fancybox-thumb-1"
-                  class="fancybox-thumb services-image_overlay"
-                  ><span>Смотреть работы</span></a
-                >
-
-                <a
-                  href="images/services/original/standart_kuhni/2.jpg"
-                  class="hidden fancybox-thumb"
-                  data-fancybox-group="fancybox-thumb-1"
-                  rel="nofollow"
-                ></a>
-                <a
-                  href="images/services/original/standart_kuhni/3.jpg"
-                  class="hidden fancybox-thumb"
-                  data-fancybox-group="fancybox-thumb-1"
-                  rel="nofollow"
-                ></a>
-                <a
-                  href="images/services/original/standart_kuhni/4.jpg"
-                  class="hidden fancybox-thumb"
-                  data-fancybox-group="fancybox-thumb-1"
-                  rel="nofollow"
-                ></a>
-                <a
-                  href="images/services/original/standart_kuhni/5.jpg"
-                  class="hidden fancybox-thumb"
-                  data-fancybox-group="fancybox-thumb-1"
-                  rel="nofollow"
-                ></a>
-                <a
-                  href="images/services/original/standart_kuhni/6.jpg"
-                  class="hidden fancybox-thumb"
-                  data-fancybox-group="fancybox-thumb-1"
-                  rel="nofollow"
-                ></a>
-                <a
-                  href="images/services/original/standart_kuhni/7.jpg"
-                  class="hidden fancybox-thumb"
-                  data-fancybox-group="fancybox-thumb-1"
-                  rel="nofollow"
-                ></a>
-                <a
-                  href="images/services/original/standart_kuhni/8.jpg"
-                  class="hidden fancybox-thumb"
-                  data-fancybox-group="fancybox-thumb-1"
-                  rel="nofollow"
-                ></a>
-                <a
-                  href="images/services/original/standart_kuhni/9.jpg"
-                  class="hidden fancybox-thumb"
-                  data-fancybox-group="fancybox-thumb-1"
-                  rel="nofollow"
-                ></a>
-              </div>
-              <div class="service-text">
-                <h3>Стандартные кухни</h3>
-                <p>Кухонные гарнитуры и отдельные модули.</p>
-                <p><strong>От 12 000 руб.</strong></p>
-                <p class="services-image_mobile visible-xs-block">
+        <div class="row swiper swiper2">
+          <div class="row-swiper__wrapper swiper-wrapper">
+            <div class="col-md-12 col-lg-6 swiper-slide">
+              <div class="service-block">
+                <div class="service-image">
+                  <img src="images/services/9.jpg" alt="" />
                   <a
                     href="images/services/original/standart_kuhni/1.jpg"
                     data-fancybox-group="fancybox-thumb-1"
-                    class="fancybox-thumb"
+                    class="fancybox-thumb services-image_overlay"
                     ><span>Смотреть работы</span></a
                   >
-                </p>
-                <div class="service-button">
+  
                   <a
-                    href="#application"
-                    data-subject="Стандартные кухни"
-                    class="btn btn-success btn-sm fancyboxModal"
-                    >Вызвать замерщика</a
-                  >
+                    href="images/services/original/standart_kuhni/2.jpg"
+                    class="hidden fancybox-thumb"
+                    data-fancybox-group="fancybox-thumb-1"
+                    rel="nofollow"
+                  ></a>
+                  <a
+                    href="images/services/original/standart_kuhni/3.jpg"
+                    class="hidden fancybox-thumb"
+                    data-fancybox-group="fancybox-thumb-1"
+                    rel="nofollow"
+                  ></a>
+                  <a
+                    href="images/services/original/standart_kuhni/4.jpg"
+                    class="hidden fancybox-thumb"
+                    data-fancybox-group="fancybox-thumb-1"
+                    rel="nofollow"
+                  ></a>
+                  <a
+                    href="images/services/original/standart_kuhni/5.jpg"
+                    class="hidden fancybox-thumb"
+                    data-fancybox-group="fancybox-thumb-1"
+                    rel="nofollow"
+                  ></a>
+                  <a
+                    href="images/services/original/standart_kuhni/6.jpg"
+                    class="hidden fancybox-thumb"
+                    data-fancybox-group="fancybox-thumb-1"
+                    rel="nofollow"
+                  ></a>
+                  <a
+                    href="images/services/original/standart_kuhni/7.jpg"
+                    class="hidden fancybox-thumb"
+                    data-fancybox-group="fancybox-thumb-1"
+                    rel="nofollow"
+                  ></a>
+                  <a
+                    href="images/services/original/standart_kuhni/8.jpg"
+                    class="hidden fancybox-thumb"
+                    data-fancybox-group="fancybox-thumb-1"
+                    rel="nofollow"
+                  ></a>
+                  <a
+                    href="images/services/original/standart_kuhni/9.jpg"
+                    class="hidden fancybox-thumb"
+                    data-fancybox-group="fancybox-thumb-1"
+                    rel="nofollow"
+                  ></a>
+                </div>
+                <div class="service-text">
+                  <h3>Стандартные кухни</h3>
+                  <p>Кухонные гарнитуры и отдельные модули.</p>
+                  <p><strong>От 12 000 руб.</strong></p>
+                  <p class="services-image_mobile visible-xs-block">
+                    <a
+                      href="images/services/original/standart_kuhni/1.jpg"
+                      data-fancybox-group="fancybox-thumb-1"
+                      class="fancybox-thumb"
+                      ><span>Смотреть работы</span></a
+                    >
+                  </p>
+                  <div class="service-button">
+                    <a
+                      href="#application"
+                      data-subject="Стандартные кухни"
+                      class="btn btn-success btn-sm fancyboxModal btn-modal"
+                      >Вызвать замерщика</a
+                    >
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-12 col-lg-6">
-            <div class="service-block">
-              <div class="service-image">
-                <img src="images/services/10.jpg" alt="" />
-                <a
-                  href="images/services/original/standart_shkafy/1.png"
-                  class="fancybox-thumb services-image_overlay"
-                  data-fancybox-group="fancybox-thumb-2"
-                  ><span>Смотреть работы</span></a
-                >
-
-                <a
-                  href="images/services/original/standart_shkafy/2.png"
-                  class="hidden fancybox-thumb"
-                  data-fancybox-group="fancybox-thumb-2"
-                  rel="nofollow"
-                ></a>
-                <a
-                  href="images/services/original/standart_shkafy/3.png"
-                  class="hidden fancybox-thumb"
-                  data-fancybox-group="fancybox-thumb-2"
-                  rel="nofollow"
-                ></a>
-                <a
-                  href="images/services/original/standart_shkafy/4.png"
-                  class="hidden fancybox-thumb"
-                  data-fancybox-group="fancybox-thumb-2"
-                  rel="nofollow"
-                ></a>
-                <a
-                  href="images/services/original/standart_shkafy/5.png"
-                  class="hidden fancybox-thumb"
-                  data-fancybox-group="fancybox-thumb-2"
-                  rel="nofollow"
-                ></a>
-                <a
-                  href="images/services/original/standart_shkafy/6.png"
-                  class="hidden fancybox-thumb"
-                  data-fancybox-group="fancybox-thumb-2"
-                  rel="nofollow"
-                ></a>
-                <a
-                  href="images/services/original/standart_shkafy/7.png"
-                  class="hidden fancybox-thumb"
-                  data-fancybox-group="fancybox-thumb-2"
-                  rel="nofollow"
-                ></a>
-                <a
-                  href="images/services/original/standart_shkafy/8.png"
-                  class="hidden fancybox-thumb"
-                  data-fancybox-group="fancybox-thumb-2"
-                  rel="nofollow"
-                ></a>
-                <a
-                  href="images/services/original/standart_shkafy/9.png"
-                  class="hidden fancybox-thumb"
-                  data-fancybox-group="fancybox-thumb-2"
-                  rel="nofollow"
-                ></a>
-                <a
-                  href="images/services/original/standart_shkafy/10.png"
-                  class="hidden fancybox-thumb"
-                  data-fancybox-group="fancybox-thumb-2"
-                  rel="nofollow"
-                ></a>
-                <a
-                  href="images/services/original/standart_shkafy/11.png"
-                  class="hidden fancybox-thumb"
-                  data-fancybox-group="fancybox-thumb-2"
-                  rel="nofollow"
-                ></a>
-                <a
-                  href="images/services/original/standart_shkafy/12.png"
-                  class="hidden fancybox-thumb"
-                  data-fancybox-group="fancybox-thumb-2"
-                  rel="nofollow"
-                ></a>
-                <a
-                  href="images/services/original/standart_shkafy/13.png"
-                  class="hidden fancybox-thumb"
-                  data-fancybox-group="fancybox-thumb-2"
-                  rel="nofollow"
-                ></a>
-                <a
-                  href="images/services/original/standart_shkafy/14.png"
-                  class="hidden fancybox-thumb"
-                  data-fancybox-group="fancybox-thumb-2"
-                  rel="nofollow"
-                ></a>
-                <a
-                  href="images/services/original/standart_shkafy/15.png"
-                  class="hidden fancybox-thumb"
-                  data-fancybox-group="fancybox-thumb-2"
-                  rel="nofollow"
-                ></a>
-                <a
-                  href="images/services/original/standart_shkafy/16.png"
-                  class="hidden fancybox-thumb"
-                  data-fancybox-group="fancybox-thumb-2"
-                  rel="nofollow"
-                ></a>
-              </div>
-              <div class="service-text">
-                <h3>Стандартные шкафы-купе</h3>
-                <p>Корпусная и встраиваемая мебель по доступным ценам.</p>
-                <p><strong>От 7 000 руб.</strong></p>
-                <p class="services-image_mobile visible-xs-block">
+            <div class="col-md-12 col-lg-6 swiper-slide">
+              <div class="service-block">
+                <div class="service-image">
+                  <img src="images/services/10.jpg" alt="" />
                   <a
                     href="images/services/original/standart_shkafy/1.png"
+                    class="fancybox-thumb services-image_overlay"
                     data-fancybox-group="fancybox-thumb-2"
-                    class="fancybox-thumb"
                     ><span>Смотреть работы</span></a
                   >
-                </p>
-                <div class="service-button">
+  
                   <a
-                    href="#application"
-                    data-subject="Стандартные шкафы-купе"
-                    class="btn btn-success btn-sm fancyboxModal"
-                    >Вызвать замерщика</a
-                  >
+                    href="images/services/original/standart_shkafy/2.png"
+                    class="hidden fancybox-thumb"
+                    data-fancybox-group="fancybox-thumb-2"
+                    rel="nofollow"
+                  ></a>
+                  <a
+                    href="images/services/original/standart_shkafy/3.png"
+                    class="hidden fancybox-thumb"
+                    data-fancybox-group="fancybox-thumb-2"
+                    rel="nofollow"
+                  ></a>
+                  <a
+                    href="images/services/original/standart_shkafy/4.png"
+                    class="hidden fancybox-thumb"
+                    data-fancybox-group="fancybox-thumb-2"
+                    rel="nofollow"
+                  ></a>
+                  <a
+                    href="images/services/original/standart_shkafy/5.png"
+                    class="hidden fancybox-thumb"
+                    data-fancybox-group="fancybox-thumb-2"
+                    rel="nofollow"
+                  ></a>
+                  <a
+                    href="images/services/original/standart_shkafy/6.png"
+                    class="hidden fancybox-thumb"
+                    data-fancybox-group="fancybox-thumb-2"
+                    rel="nofollow"
+                  ></a>
+                  <a
+                    href="images/services/original/standart_shkafy/7.png"
+                    class="hidden fancybox-thumb"
+                    data-fancybox-group="fancybox-thumb-2"
+                    rel="nofollow"
+                  ></a>
+                  <a
+                    href="images/services/original/standart_shkafy/8.png"
+                    class="hidden fancybox-thumb"
+                    data-fancybox-group="fancybox-thumb-2"
+                    rel="nofollow"
+                  ></a>
+                  <a
+                    href="images/services/original/standart_shkafy/9.png"
+                    class="hidden fancybox-thumb"
+                    data-fancybox-group="fancybox-thumb-2"
+                    rel="nofollow"
+                  ></a>
+                  <a
+                    href="images/services/original/standart_shkafy/10.png"
+                    class="hidden fancybox-thumb"
+                    data-fancybox-group="fancybox-thumb-2"
+                    rel="nofollow"
+                  ></a>
+                  <a
+                    href="images/services/original/standart_shkafy/11.png"
+                    class="hidden fancybox-thumb"
+                    data-fancybox-group="fancybox-thumb-2"
+                    rel="nofollow"
+                  ></a>
+                  <a
+                    href="images/services/original/standart_shkafy/12.png"
+                    class="hidden fancybox-thumb"
+                    data-fancybox-group="fancybox-thumb-2"
+                    rel="nofollow"
+                  ></a>
+                  <a
+                    href="images/services/original/standart_shkafy/13.png"
+                    class="hidden fancybox-thumb"
+                    data-fancybox-group="fancybox-thumb-2"
+                    rel="nofollow"
+                  ></a>
+                  <a
+                    href="images/services/original/standart_shkafy/14.png"
+                    class="hidden fancybox-thumb"
+                    data-fancybox-group="fancybox-thumb-2"
+                    rel="nofollow"
+                  ></a>
+                  <a
+                    href="images/services/original/standart_shkafy/15.png"
+                    class="hidden fancybox-thumb"
+                    data-fancybox-group="fancybox-thumb-2"
+                    rel="nofollow"
+                  ></a>
+                  <a
+                    href="images/services/original/standart_shkafy/16.png"
+                    class="hidden fancybox-thumb"
+                    data-fancybox-group="fancybox-thumb-2"
+                    rel="nofollow"
+                  ></a>
+                </div>
+                <div class="service-text">
+                  <h3>Стандартные шкафы-купе</h3>
+                  <p>Корпусная и встраиваемая мебель по доступным ценам.</p>
+                  <p><strong>От 7 000 руб.</strong></p>
+                  <p class="services-image_mobile visible-xs-block">
+                    <a
+                      href="images/services/original/standart_shkafy/1.png"
+                      data-fancybox-group="fancybox-thumb-2"
+                      class="fancybox-thumb"
+                      ><span>Смотреть работы</span></a
+                    >
+                  </p>
+                  <div class="service-button">
+                    <a
+                      href="#application"
+                      data-subject="Стандартные шкафы-купе"
+                      class="btn btn-success btn-sm fancyboxModal btn-modal"
+                      >Вызвать замерщика</a
+                    >
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-12 col-lg-6">
-            <div class="service-block">
-              <div class="service-image">
-                <img src="images/services/11.jpg" alt="" />
-                <a
-                  href="images/services/original/elitnie_kuhni/1.jpg"
-                  class="fancybox-thumb services-image_overlay"
-                  data-fancybox-group="fancybox-thumb-3"
-                  ><span>Смотреть работы</span></a
-                >
-
-                <a
-                  href="images/services/original/elitnie_kuhni/2.jpg"
-                  class="hidden fancybox-thumb"
-                  data-fancybox-group="fancybox-thumb-3"
-                  rel="nofollow"
-                ></a>
-                <a
-                  href="images/services/original/elitnie_kuhni/3.jpg"
-                  class="hidden fancybox-thumb"
-                  data-fancybox-group="fancybox-thumb-3"
-                  rel="nofollow"
-                ></a>
-                <a
-                  href="images/services/original/elitnie_kuhni/4.jpg"
-                  class="hidden fancybox-thumb"
-                  data-fancybox-group="fancybox-thumb-3"
-                  rel="nofollow"
-                ></a>
-                <a
-                  href="images/services/original/elitnie_kuhni/5.png"
-                  class="hidden fancybox-thumb"
-                  data-fancybox-group="fancybox-thumb-3"
-                  rel="nofollow"
-                ></a>
-              </div>
-              <div class="service-text">
-                <h3>Элитные кухни</h3>
-                <p>Купить кухни итальянского качества.</p>
-                <p><strong>От 35 000 руб.</strong></p>
-                <p class="services-image_mobile visible-xs-block">
+            <div class="col-md-12 col-lg-6 swiper-slide">
+              <div class="service-block">
+                <div class="service-image">
+                  <img src="images/services/11.jpg" alt="" />
                   <a
                     href="images/services/original/elitnie_kuhni/1.jpg"
+                    class="fancybox-thumb services-image_overlay"
                     data-fancybox-group="fancybox-thumb-3"
-                    class="fancybox-thumb"
                     ><span>Смотреть работы</span></a
                   >
-                </p>
-                <div class="service-button">
+  
                   <a
-                    href="#application"
-                    data-subject="Элитные кухни"
-                    class="btn btn-success btn-sm fancyboxModal"
-                    >Вызвать замерщика</a
-                  >
+                    href="images/services/original/elitnie_kuhni/2.jpg"
+                    class="hidden fancybox-thumb"
+                    data-fancybox-group="fancybox-thumb-3"
+                    rel="nofollow"
+                  ></a>
+                  <a
+                    href="images/services/original/elitnie_kuhni/3.jpg"
+                    class="hidden fancybox-thumb"
+                    data-fancybox-group="fancybox-thumb-3"
+                    rel="nofollow"
+                  ></a>
+                  <a
+                    href="images/services/original/elitnie_kuhni/4.jpg"
+                    class="hidden fancybox-thumb"
+                    data-fancybox-group="fancybox-thumb-3"
+                    rel="nofollow"
+                  ></a>
+                  <a
+                    href="images/services/original/elitnie_kuhni/5.png"
+                    class="hidden fancybox-thumb"
+                    data-fancybox-group="fancybox-thumb-3"
+                    rel="nofollow"
+                  ></a>
+                </div>
+                <div class="service-text">
+                  <h3>Элитные кухни</h3>
+                  <p>Купить кухни итальянского качества.</p>
+                  <p><strong>От 35 000 руб.</strong></p>
+                  <p class="services-image_mobile visible-xs-block">
+                    <a
+                      href="images/services/original/elitnie_kuhni/1.jpg"
+                      data-fancybox-group="fancybox-thumb-3"
+                      class="fancybox-thumb"
+                      ><span>Смотреть работы</span></a
+                    >
+                  </p>
+                  <div class="service-button">
+                    <a
+                      href="#application"
+                      data-subject="Элитные кухни"
+                      class="btn btn-success btn-sm fancyboxModal btn-modal"
+                      >Вызвать замерщика</a
+                    >
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-12 col-lg-6">
-            <div class="service-block">
-              <div class="service-image">
-                <img src="images/services/12.jpg" alt="" />
-                <a
-                  href="images/services/original/elitnie_shkafy/1.jpg"
-                  class="fancybox-thumb services-image_overlay"
-                  data-fancybox-group="fancybox-thumb-4"
-                  ><span>Смотреть работы</span></a
-                >
-
-                <a
-                  href="images/services/original/elitnie_shkafy/2.jpg"
-                  class="hidden fancybox-thumb"
-                  data-fancybox-group="fancybox-thumb-4"
-                  rel="nofollow"
-                ></a>
-                <a
-                  href="images/services/original/elitnie_shkafy/3.jpg"
-                  class="hidden fancybox-thumb"
-                  data-fancybox-group="fancybox-thumb-4"
-                  rel="nofollow"
-                ></a>
-              </div>
-              <div class="service-text">
-                <h3>Элитные шкафы-купе</h3>
-                <p>Мебель на заказ с эксклюзивным дизайном.</p>
-                <p><strong>От 18 000 руб.</strong></p>
-                <p class="services-image_mobile visible-xs-block">
+            <div class="col-md-12 col-lg-6 swiper-slide">
+              <div class="service-block">
+                <div class="service-image">
+                  <img src="images/services/12.jpg" alt="" />
                   <a
                     href="images/services/original/elitnie_shkafy/1.jpg"
+                    class="fancybox-thumb services-image_overlay"
                     data-fancybox-group="fancybox-thumb-4"
-                    class="fancybox-thumb"
                     ><span>Смотреть работы</span></a
                   >
-                </p>
-                <div class="service-button">
+  
                   <a
-                    href="#application"
-                    data-subject="Элитные шкафы-купе"
-                    class="btn btn-success btn-sm fancyboxModal"
-                    >Вызвать замерщика</a
-                  >
+                    href="images/services/original/elitnie_shkafy/2.jpg"
+                    class="hidden fancybox-thumb"
+                    data-fancybox-group="fancybox-thumb-4"
+                    rel="nofollow"
+                  ></a>
+                  <a
+                    href="images/services/original/elitnie_shkafy/3.jpg"
+                    class="hidden fancybox-thumb"
+                    data-fancybox-group="fancybox-thumb-4"
+                    rel="nofollow"
+                  ></a>
+                </div>
+                <div class="service-text">
+                  <h3>Элитные шкафы-купе</h3>
+                  <p>Мебель на заказ с эксклюзивным дизайном.</p>
+                  <p><strong>От 18 000 руб.</strong></p>
+                  <p class="services-image_mobile visible-xs-block">
+                    <a
+                      href="images/services/original/elitnie_shkafy/1.jpg"
+                      data-fancybox-group="fancybox-thumb-4"
+                      class="fancybox-thumb"
+                      ><span>Смотреть работы</span></a
+                    >
+                  </p>
+                  <div class="service-button">
+                    <a
+                      href="#application"
+                      data-subject="Элитные шкафы-купе"
+                      class="btn btn-success btn-sm fancyboxModal btn-modal"
+                      >Вызвать замерщика</a
+                    >
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="services-arrows">
-            <div class="services__arrow services__arrow--left">
-              <img src="images/benefits/left-arrow.svg" alt="" />
+          </div> 
+            <div class="services-arrows">
+              <div class="services__arrow services__arrow--left">
+                <img src="images/benefits/left-arrow.svg" alt="" />
+              </div>
+              <div class="services__arrow services__arrow--right">
+                <img src="images/benefits/right-arrow.svg" alt="" />
+              </div>
             </div>
-            <div class="services__arrow services__arrow--right">
-              <img src="images/benefits/right-arrow.svg" alt="" />
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -612,10 +617,10 @@
               <div class="countdown" data-days="7">
 							<div class="countdown-text">До конца акции осталось:
 								<div class="count-wrap">
-									<div class="count count_1">Дней:</br> <span>01</span></div>
-									<div class="count count_2">Часов:</br> <span>02</span></div>
-									<div class="count count_3">Минут:</br> <span>03</span></div>
-									<div class="count count_4">Секунд:</br> <span>04</span></div>
+									<div class="count count_1">Дней:</br> <span class="count1">01</span></div>
+									<div class="count count_2">Часов:</br> <span class="count2">02</span></div>
+									<div class="count count_3">Минут:</br> <span class="count3">03</span></div>
+									<div class="count count_4">Секунд:</br> <span class="count4">04</span></div>
 								</div>
 							</div>
 						</div>
@@ -860,22 +865,22 @@
     			<h2 class="heading"><span>Сертификаты</span> и <span>документы</span></h2>
     		</div>
     		<div class="text-center">
-	    		<div class="col-sm-4">
+	    		<div class="col-sm-4 docs">
 	    			<a href="images/documents/original/document4.jpg" class="sertificate-document" data-fancybox-group="gallery-documents">
 	    				<img src="images/documents/document4.jpg" class="img-responsive" alt="">
-	    				<div class="document-overlay"></div>
+	    				<div class="document-overlay doc-modal"></div>
 	    			</a>
 	    		</div>
-	    		<div class="col-sm-4">
+	    		<div class="col-sm-4 docs">
 	    			<a href="images/documents/original/document4.jpg" class="sertificate-document" data-fancybox-group="gallery-documents">
 	    				<img src="images/documents/document4.jpg" class="img-responsive" alt="">
-	    				<div class="document-overlay"></div>
+	    				<div class="document-overlay doc-modal"></div>
 	    			</a>
 	    		</div>
-	    		<div class="col-sm-4">
+	    		<div class="col-sm-4 docs">
 	    			<a href="images/documents/original/document4.jpg" class="sertificate-document" data-fancybox-group="gallery-documents">
 	    				<img src="images/documents/document4.jpg" class="img-responsive" alt="">
-	    				<div class="document-overlay"></div>
+	    				<div class="document-overlay doc-modal"></div>
 	    			</a>
 	    		</div>
     		</div>
@@ -894,10 +899,10 @@
               <div class="countdown" data-days="7">
 							<div class="countdown-text">До конца акции осталось:
 								<div class="count-wrap">
-									<div class="count count_1">Дней:</br> <span>01</span></div>
-									<div class="count count_2">Часов:</br> <span>02</span></div>
-									<div class="count count_3">Минут:</br> <span>03</span></div>
-									<div class="count count_4">Секунд:</br> <span>04</span></div>
+									<div class="count count_1">Дней:</br> <span class="count1">01</span></div>
+									<div class="count count_2">Часов:</br> <span class="count2">02</span></div>
+									<div class="count count_3">Минут:</br> <span class="count3">03</span></div>
+									<div class="count count_4">Секунд:</br> <span class="count4">04</span></div>
 								</div>
 							</div>
 						</div>
@@ -1222,7 +1227,7 @@
 
 		<div class="overlay"></div>
 
-	<div class="header-modal header-modal--opened">
+	<div class="header-modal header-modal--opened" id="header-modal">
 		<div class="fancybox-skin" style="padding: 0px; width: auto; height: auto;">
 			<div class="fancybox-outer">
 				<div class="fancybox-inner" style="overflow: hidden; width: 580px; height: 495px;">
@@ -1246,7 +1251,7 @@
             </form>
             <span class="help-block">Гарантируем 100% конфиденциальность. Ваша информация не будет распространяться.</span>
         </div>
-    </div></div></div><span title="Close" class="header-modal__close">x</span></div></div>
+    </div></div></div><span title="Close" class="header-modal__close modal__close">x</span></div></div>
 
 	<div class="services-modal services-modal--opened">
 			<div class="fancybox-skin" style="padding: 0px; width: auto; height: auto;">
@@ -1274,7 +1279,7 @@
 				<span class="help-block">Гарантируем 100% конфиденциальность. Ваша информация не будет распространяться.</span>
 			</div>
 		</div></div></div>
-		<span title="Close" class="services-modal__close">x</span></div>
+		<span title="Close" class="services-modal__close modal__close">x</span></div>
 	</div>
 
 	<div class="smooth-scroll">
