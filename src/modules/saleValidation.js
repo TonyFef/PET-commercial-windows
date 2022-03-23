@@ -1,6 +1,7 @@
-export const saleValidation = ({ formId, someElem = [] }) => {
-    const form = document.getElementById(formId);
-    const forms = document.getElementsByClassName("form-horizontal");
+export const saleValidation = () => {
+    const forms = document.getElementsByTagName("form");
+    console.log(forms);
+    // const forms = document.getElementsByClassName("form-horizontal");
 
     const statusBlock = document.createElement("div");
     statusBlock.classList.add("loading");
@@ -11,13 +12,13 @@ export const saleValidation = ({ formId, someElem = [] }) => {
 
     let success = true;
 
-    for (let form of forms) {
-        const inputName = form.getElementsByTagName("input")[0];
+    for (let oneForm of forms) {
+        const inputName = oneForm.getElementsByTagName("input")[0];
         inputName.addEventListener("input", (e) => {
             e.target.value = e.target.value.replace(/[^a-zA-Zа-яА-Я\s]/g, "");
         });
 
-        const inputPhone = form.getElementsByTagName("input")[1];
+        const inputPhone = oneForm.getElementsByTagName("input")[1];
         inputPhone.addEventListener("input", (e) => {
             e.target.value = e.target.value.replace(/[^0-9\s\+]/g, "");
         });
@@ -60,50 +61,102 @@ export const saleValidation = ({ formId, someElem = [] }) => {
         }).then((res) => res.json());
     };
 
-    const submitForm = () => {
-        const formElements = form.querySelectorAll("input[type='text']");
-        const formData = new FormData(form);
-        const formBody = {};
+    for (let form of forms) {
+        const submitForm = () => {
+            const formElements = form.querySelectorAll("input[type='text']");
+            const formData = new FormData(form);
+            const formBody = {};
 
-        statusBlock.textContent = loadText;
-        form.append(statusBlock);
+            statusBlock.textContent = loadText;
+            form.append(statusBlock);
 
-        formData.forEach((val, key) => {
-            formBody[key] = val;
-        });
+            formData.forEach((val, key) => {
+                formBody[key] = val;
+            });
 
-        validate(formElements);
+            validate(formElements);
 
-        if (success) {
-            sendData(formBody)
-                .then((data) => {
-                    statusBlock.textContent = successText;
-                    setTimeout(() => statusBlock.remove(), 2000);
-                    formElements.forEach((input) => {
-                        input.value = "";
+            if (success) {
+                sendData(formBody)
+                    .then((data) => {
+                        statusBlock.textContent = successText;
+                        setTimeout(() => statusBlock.remove(), 2000);
+                        formElements.forEach((input) => {
+                            input.value = "";
+                        });
+                    })
+                    .catch((error) => {
+                        statusBlock.textContent = errorText;
                     });
-                })
-                .catch((error) => {
-                    statusBlock.textContent = errorText;
-                });
+            }
+            //  else {
+            //     // alert("Данные не валидны!");
+            //     // statusBlock.textContent = errorText;
+            // }
+        };
+
+        try {
+            if (!form) {
+                throw new Error("Верните форму на место!");
+            }
+
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+                let inputs = form.querySelectorAll('input')
+                inputs.forEach((input) => input.style.border = "1px solid #dfdfdf")
+                // console.log(inputs);
+                // input.style.border = "1px solid white";
+                submitForm();
+            });
+        } catch (error) {
+            console.log(error.message);
         }
-        //  else {
-        //     // alert("Данные не валидны!");
-        //     // statusBlock.textContent = errorText;
-        // }
-    };
-
-    try {
-        if (!form) {
-            throw new Error("Верните форму на место!");
-        }
-
-        form.addEventListener("submit", (e) => {
-            e.preventDefault();
-
-            submitForm();
-        });
-    } catch (error) {
-        console.log(error.message);
     }
+
+    // const submitForm = () => {
+    //     const formElements = form.querySelectorAll("input[type='text']");
+    //     const formData = new FormData(form);
+    //     const formBody = {};
+
+    //     statusBlock.textContent = loadText;
+    //     form.append(statusBlock);
+
+    //     formData.forEach((val, key) => {
+    //         formBody[key] = val;
+    //     });
+
+    //     validate(formElements);
+
+    //     if (success) {
+    //         sendData(formBody)
+    //             .then((data) => {
+    //                 statusBlock.textContent = successText;
+    //                 setTimeout(() => statusBlock.remove(), 2000);
+    //                 formElements.forEach((input) => {
+    //                     input.value = "";
+    //                 });
+    //             })
+    //             .catch((error) => {
+    //                 statusBlock.textContent = errorText;
+    //             });
+    //     }
+    //     //  else {
+    //     //     // alert("Данные не валидны!");
+    //     //     // statusBlock.textContent = errorText;
+    //     // }
+    // };
+
+    // try {
+    //     if (!form) {
+    //         throw new Error("Верните форму на место!");
+    //     }
+
+    //     form.addEventListener("submit", (e) => {
+    //         e.preventDefault();
+
+    //         submitForm();
+    //     });
+    // } catch (error) {
+    //     console.log(error.message);
+    // }
 };
