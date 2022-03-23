@@ -7,7 +7,7 @@ import { smoothScroll } from "./modules/smoothScroll";
 
 const overlay = document.querySelector(".overlay");
 const swiper1 = ".benefits-inner";
-const swiper2 = ".row";
+const swiper2 = ".swiper2";
 
 modal(overlay);
 timer("26 march 2022");

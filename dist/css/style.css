@@ -1148,6 +1148,20 @@ p.services-image_mobile {
         font-size: 16px;
     }
 }
+@media (max-width: 1200px) {
+    .service-image {
+        width: 0;
+        height: 0;
+    }
+    .service-image__img {
+        width: 0;
+        height: 0;
+    }
+    .service-text {
+        margin-left: 0;
+        border-radius: 10px;
+    }
+}
 @media (max-width: 1150px) {
     #offer .container {
         height: 400px;
@@ -1342,6 +1356,11 @@ p.services-image_mobile {
     .benefits-inner {
         text-align: center;
         max-width: 350px;
+    }
+}
+@media (max-width: 650px) {
+    .service-block {
+        margin: 0;
     }
 }
 @media (max-width: 580px) {
