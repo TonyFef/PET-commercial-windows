@@ -1,4 +1,4 @@
-import { elementScrollIntoView, scrollIntoView } from "seamless-scroll-polyfill";
+import { elementScrollIntoView } from "seamless-scroll-polyfill";
 
 export const smoothScroll = () => {
     const upButton = document.querySelector(".smooth-scroll");
@@ -16,10 +16,8 @@ export const smoothScroll = () => {
     });
 
     let scrollY;
-
     const onChange = () => {
         scrollY = window.scrollY;
-        // console.log(typeof scrollY);
 
         if (scrollY >= 850) {
             upButton.style.display = "block";
@@ -29,18 +27,5 @@ export const smoothScroll = () => {
         }
     };
 
-    setInterval(onChange, 25);
-
-    // const onEntry = (entry) => {
-    //     entry.forEach((change) => {
-    //         if (change.isIntersecting) {
-    //             upButton.style.display = "block";
-    //         }
-    //     });
-    // };
-
-    // let options = { threshold: [0.5] };
-    // let observer = new IntersectionObserver(onEntry, options);
-    // let element = document.getElementById("benefits");
-    // observer.observe(element);
+    window.addEventListener("scroll", onChange);
 };
