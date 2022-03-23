@@ -2,14 +2,14 @@ export const saleValidation = () => {
     const forms = document.getElementsByTagName("form");
 
     const count = document.getElementById("calc-total");
-    // console.log(count);
+    console.log(forms);
 
     const statusBlock = document.createElement("div");
     statusBlock.classList.add("loading");
     const loadText = "Загрузка...";
     const errorText = "Ошибка. Попробуйте еще раз!";
     const unvalidText = "Проверьте введенные данные!";
-    const successText = "Спасибо! Наш менеджер с нами свяжется!";
+    const successText = "Спасибо! Менеджер с нами свяжется!";
 
     let success = true;
 
@@ -18,10 +18,16 @@ export const saleValidation = () => {
         inputName.addEventListener("input", (e) => {
             e.target.value = e.target.value.replace(/[^a-zA-Zа-яА-Я\s]/g, "");
         });
+        inputName.addEventListener("focus", (e) => {
+            e.target.style.border = "1px solid #dfdfdf";
+        });
 
         const inputPhone = oneForm.getElementsByTagName("input")[1];
         inputPhone.addEventListener("input", (e) => {
             e.target.value = e.target.value.replace(/[^0-9\s\+]/g, "");
+        });
+        inputPhone.addEventListener("focus", (e) => {
+            e.target.style.border = "1px solid #dfdfdf";
         });
     }
 
@@ -39,7 +45,7 @@ export const saleValidation = () => {
                     }
                     break;
                 case "phone":
-                    if (input.value.length > 1 && input.value.length < 17) {
+                    if (input.value.length > 5 && input.value.length < 17) {
                         return success;
                     } else {
                         statusBlock.textContent = unvalidText;
