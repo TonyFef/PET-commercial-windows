@@ -1,6 +1,6 @@
 export const saleValidation = () => {
     const forms = document.getElementsByTagName("form");
-    // const forms = document.getElementsByClassName("form-horizontal");
+    const count = document.getElementById("calc-total");
 
     const statusBlock = document.createElement("div");
     statusBlock.classList.add("loading");
@@ -28,7 +28,6 @@ export const saleValidation = () => {
         list.forEach((input) => {
             switch (input.name) {
                 case "fio":
-                    // let result = input.value.length > 1 ? success : (success = false);
                     if (input.value.length > 1) {
                         return success;
                     } else {
@@ -64,7 +63,7 @@ export const saleValidation = () => {
         const submitForm = () => {
             const formElements = form.querySelectorAll("input[type='text']");
             const formData = new FormData(form);
-            const formBody = {};
+            const formBody = { count: +count.value };
 
             statusBlock.textContent = loadText;
             form.append(statusBlock);
@@ -74,6 +73,7 @@ export const saleValidation = () => {
             });
 
             validate(formElements);
+            console.log(formBody);
 
             if (success) {
                 sendData(formBody)
@@ -101,61 +101,12 @@ export const saleValidation = () => {
 
             form.addEventListener("submit", (e) => {
                 e.preventDefault();
-                let inputs = form.querySelectorAll('input')
-                inputs.forEach((input) => input.style.border = "1px solid #dfdfdf")
-                // console.log(inputs);
-                // input.style.border = "1px solid white";
+                let inputs = form.querySelectorAll("input");
+                inputs.forEach((input) => (input.style.border = "1px solid #dfdfdf"));
                 submitForm();
             });
         } catch (error) {
             console.log(error.message);
         }
     }
-
-    // const submitForm = () => {
-    //     const formElements = form.querySelectorAll("input[type='text']");
-    //     const formData = new FormData(form);
-    //     const formBody = {};
-
-    //     statusBlock.textContent = loadText;
-    //     form.append(statusBlock);
-
-    //     formData.forEach((val, key) => {
-    //         formBody[key] = val;
-    //     });
-
-    //     validate(formElements);
-
-    //     if (success) {
-    //         sendData(formBody)
-    //             .then((data) => {
-    //                 statusBlock.textContent = successText;
-    //                 setTimeout(() => statusBlock.remove(), 2000);
-    //                 formElements.forEach((input) => {
-    //                     input.value = "";
-    //                 });
-    //             })
-    //             .catch((error) => {
-    //                 statusBlock.textContent = errorText;
-    //             });
-    //     }
-    //     //  else {
-    //     //     // alert("Данные не валидны!");
-    //     //     // statusBlock.textContent = errorText;
-    //     // }
-    // };
-
-    // try {
-    //     if (!form) {
-    //         throw new Error("Верните форму на место!");
-    //     }
-
-    //     form.addEventListener("submit", (e) => {
-    //         e.preventDefault();
-
-    //         submitForm();
-    //     });
-    // } catch (error) {
-    //     console.log(error.message);
-    // }
 };

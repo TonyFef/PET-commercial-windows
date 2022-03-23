@@ -1,34 +1,25 @@
 import { animate } from "./helpers";
 
-const calc = (price = 100) => {
-    const calcBlock = document.querySelector(".calc-block");
-    // console.log(calcBlock);
-    const calcType = document.querySelector(".calc-type");
-    const calcSquare = document.querySelector(".calc-square");
-    const calcCount = document.querySelector(".calc-count");
-    const calcDay = document.querySelector(".calc-day");
-    const total = document.getElementById("total");
+export const calc = () => {
+    const calcBlock = document.getElementById("calc");
+    const calcType = document.querySelector("#calc-type");
+    const calcGlass = document.querySelector("#calc-type-material");
+    const calcSquare = document.querySelector("#calc-input");
+    const total = document.getElementById("calc-total");
 
     const countCalc = () => {
-        const calcTypeValue = +calcType.options[calcType.selectedIndex].value;
-        const calcSquareValue = +calcSquare.value;
-
         let totalValue = 0;
-        let calcCountValue = 1;
-        let calcDayValue = 1;
 
-        if (calcDay.value && calcDay.value < 5) {
-            calcDayValue = 2;
-        } else if (calcDay.value && calcDay.value < 10) {
-            calcDayValue = 1.5;
-        }
+        const calcTypeValue = +calcType.options[calcType.selectedIndex].value;
+        let calcGlassValue = +calcGlass.value;
+        let calcSquareValue = +calcSquare.value;
 
-        if (calcCount.value > 1) {
-            calcCountValue += calcCount.value / 10;
-        }
+        calcSquare.addEventListener("input", (e) => {
+            e.target.value = e.target.value.replace(/[\D+\-]/g, "");
+        });
 
         if (calcSquare.value && calcType.value) {
-            totalValue = price * calcTypeValue * calcSquareValue * calcCountValue * calcDayValue;
+            totalValue = calcSquareValue * calcTypeValue;
 
             animate({
                 duration: 250,
@@ -36,21 +27,31 @@ const calc = (price = 100) => {
                     return timeFraction;
                 },
                 draw(progress) {
-                    total.textContent = (+progress * totalValue).toFixed();
+                    total.value = (+progress * totalValue).toFixed();
+                },
+            });
+        }
+        if (calcSquare.value && calcType.value && calcGlassValue) {
+            totalValue = calcGlassValue * calcSquareValue * calcTypeValue;
+
+            animate({
+                duration: 250,
+                timing(timeFraction) {
+                    return timeFraction;
+                },
+                draw(progress) {
+                    total.value = (+progress * totalValue).toFixed();
                 },
             });
         }
         if (calcSquareValue == "") {
-            total.textContent = 0;
+            total.value = 0;
         }
     };
 
     calcBlock.addEventListener("input", (e) => {
-        // console.log(typeof calcSquare.value);
-        if (e.target === calcType || e.target === calcSquare || e.target === calcCount || e.target === calcDay) {
+        if (e.target === calcType || e.target === calcGlass || e.target === calcSquare) {
             countCalc();
         }
     });
 };
-
-export default calc;
