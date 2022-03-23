@@ -1,7 +1,16 @@
 export const saleValidation = ({ formId, someElem = [] }) => {
     const form = document.getElementById(formId);
-    let success = true;
     const forms = document.getElementsByClassName("form-horizontal");
+
+    const statusBlock = document.createElement("div");
+    statusBlock.classList.add("loading");
+    const loadText = "Загрузка...";
+    const errorText = "Ошибка. Попробуйте еще раз!";
+    const unvalidText = "Проверьте введенные данные!";
+    const successText = "Спасибо! Наш менеджер с нами свяжется!";
+
+    let success = true;
+
     for (let form of forms) {
         const inputName = form.getElementsByTagName("input")[0];
         inputName.addEventListener("input", (e) => {
@@ -19,12 +28,21 @@ export const saleValidation = ({ formId, someElem = [] }) => {
         list.forEach((input) => {
             switch (input.name) {
                 case "fio":
-                    let result = input.value.length > 1 ? success : (success = false);
+                    // let result = input.value.length > 1 ? success : (success = false);
+                    if (input.value.length > 1) {
+                        return success;
+                    } else {
+                        input.style.border = "1px solid #f30b01";
+                        statusBlock.textContent = unvalidText;
+                        return (success = false);
+                    }
                     break;
                 case "phone":
                     if (input.value.length > 1 && input.value.length < 17) {
                         return success;
                     } else {
+                        statusBlock.textContent = unvalidText;
+                        input.style.border = "1px solid #f30b01";
                         return (success = false);
                     }
                     break;
@@ -47,6 +65,9 @@ export const saleValidation = ({ formId, someElem = [] }) => {
         const formData = new FormData(form);
         const formBody = {};
 
+        statusBlock.textContent = loadText;
+        form.append(statusBlock);
+
         formData.forEach((val, key) => {
             formBody[key] = val;
         });
@@ -56,21 +77,25 @@ export const saleValidation = ({ formId, someElem = [] }) => {
         if (success) {
             sendData(formBody)
                 .then((data) => {
+                    statusBlock.textContent = successText;
+                    setTimeout(() => statusBlock.remove(), 2000);
                     formElements.forEach((input) => {
                         input.value = "";
                     });
                 })
                 .catch((error) => {
-                    console.error();
+                    statusBlock.textContent = errorText;
                 });
-        } else {
-            alert("Данные не валидны!");
         }
+        //  else {
+        //     // alert("Данные не валидны!");
+        //     // statusBlock.textContent = errorText;
+        // }
     };
 
     try {
         if (!form) {
-            throw new Error("Верниие форму на место!");
+            throw new Error("Верните форму на место!");
         }
 
         form.addEventListener("submit", (e) => {
