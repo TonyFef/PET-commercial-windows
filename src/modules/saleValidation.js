@@ -1,6 +1,5 @@
 export const saleValidation = () => {
     const forms = document.getElementsByTagName("form");
-    console.log(forms);
     // const forms = document.getElementsByClassName("form-horizontal");
 
     const statusBlock = document.createElement("div");

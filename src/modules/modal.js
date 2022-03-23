@@ -6,7 +6,7 @@ export const modal = (overlay) => {
     const headerModalWindow = document.getElementById("header-modal");
     const servicesModalWindow = document.querySelector(".services-modal");
     const modalCloseBtns = document.getElementsByClassName("modal__close");
-    const docsImg = document.querySelectorAll(".sertificate-document");
+    let docsImg = document.querySelectorAll(".sertificate-document");
 
     const btnForModal = document.getElementsByClassName("btn-modal");
     const docsForModal = document.getElementsByClassName("doc-modal");

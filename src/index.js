@@ -5,9 +5,10 @@ import { swiper } from "./modules/swiper";
 import { saleValidation } from "./modules/saleValidation";
 import { smoothScroll } from "./modules/smoothScroll";
 
-const overlay = document.querySelector(".overlay");
+let overlay = document.querySelector(".overlay");
 const swiper1 = ".benefits-inner";
 const swiper2 = ".swiper2";
+const swiper3 = ".swiper3";
 
 modal(overlay);
 timer("26 march 2022");
