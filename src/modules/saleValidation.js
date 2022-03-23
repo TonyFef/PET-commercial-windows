@@ -1,6 +1,8 @@
 export const saleValidation = () => {
     const forms = document.getElementsByTagName("form");
+
     const count = document.getElementById("calc-total");
+    // console.log(count);
 
     const statusBlock = document.createElement("div");
     statusBlock.classList.add("loading");
@@ -63,7 +65,13 @@ export const saleValidation = () => {
         const submitForm = () => {
             const formElements = form.querySelectorAll("input[type='text']");
             const formData = new FormData(form);
-            const formBody = { count: +count.value };
+            let formBody;
+
+            if (count) {
+                formBody = { count: +count.value };
+            } else {
+                formBody = {};
+            }
 
             statusBlock.textContent = loadText;
             form.append(statusBlock);
