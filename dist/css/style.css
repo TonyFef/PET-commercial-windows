@@ -1326,6 +1326,11 @@ p.services-image_mobile {
         border-radius: 50px;
     }
 }
+@media (max-width: 850px) {
+    .p-small {
+        font-size: 18px;    
+    }
+}
 @media (max-width: 767px) {
     #benefits .col-md-4:last-child .benefit-title {
         margin-bottom: 40px;
@@ -1358,6 +1363,11 @@ p.services-image_mobile {
         max-width: 350px;
     }
 }
+@media (max-width: 730px) {
+    .p-hidden {
+        display: none;
+    }
+}
 @media (max-width: 650px) {
     .service-block {
         margin: 0;
@@ -1381,6 +1391,11 @@ p.services-image_mobile {
     .benefits-inner {
         text-align: center;
         max-width: 185px;
+    }
+}
+@media (max-width: 576px) {
+    .p-hidden {
+        display: block;
     }
 }
 @media (max-width: 480px) {
