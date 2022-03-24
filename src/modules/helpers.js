@@ -21,6 +21,7 @@ export const fixWhenScrollModal = () => {
     let scrollY = window.scrollY;
     document.body.style.position = "fixed";
     document.body.style.top = `-${scrollY}px`;
+    
 };
 
 export const closeWhenScrollModal = () => {
