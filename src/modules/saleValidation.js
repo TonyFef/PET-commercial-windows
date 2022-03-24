@@ -1,3 +1,5 @@
+import { closeWhenScrollModal } from "./helpers";
+
 export const saleValidation = () => {
     const forms = document.getElementsByTagName("form");
 
@@ -95,13 +97,27 @@ export const saleValidation = () => {
             });
 
             validate(formElements);
-            // console.log(formBody);
 
             if (success) {
                 sendData(formBody)
                     .then((data) => {
                         statusBlock.textContent = successText;
                         setTimeout(() => statusBlock.remove(), 2000);
+                        setTimeout(() => {
+                            let overlay = document.querySelector(".overlay");
+                            let docModal = document.querySelector(".doc-div");
+
+                            const headerModalWindow = document.getElementById("header-modal");
+                            const servicesModalWindow = document.querySelector(".services-modal");
+
+                            headerModalWindow.style.display = "none";
+                            servicesModalWindow.style.display = "none";
+
+                            docModal.classList.add("none");
+                            docModal.classList.remove("show");
+                            overlay.style.display = "none";
+                            closeWhenScrollModal();
+                        }, 3000);
                         formElements.forEach((input) => {
                             input.value = "";
                         });
