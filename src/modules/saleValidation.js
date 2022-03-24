@@ -2,7 +2,6 @@ export const saleValidation = () => {
     const forms = document.getElementsByTagName("form");
 
     const count = document.getElementById("calc-total");
-    console.log(forms);
 
     const statusBlock = document.createElement("div");
     statusBlock.classList.add("loading");
@@ -73,7 +72,7 @@ export const saleValidation = () => {
             const formData = new FormData(form);
             let formBody;
 
-            if (count) {
+            if (count && count.value != 0) {
                 formBody = { count: +count.value };
             } else {
                 formBody = {};
@@ -84,10 +83,19 @@ export const saleValidation = () => {
 
             formData.forEach((val, key) => {
                 formBody[key] = val;
+
+                let link = window.location.href;
+                let linkModified = link.substr(link.length - 10);
+
+                if (linkModified == "kuhni.html") {
+                    formBody.page = "Кухни";
+                } else if (linkModified == "lkony.html") {
+                    formBody.page = "Балконы";
+                }
             });
 
             validate(formElements);
-            console.log(formBody);
+            // console.log(formBody);
 
             if (success) {
                 sendData(formBody)
