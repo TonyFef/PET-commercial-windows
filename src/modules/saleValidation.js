@@ -9,7 +9,7 @@ export const saleValidation = () => {
     const loadText = "Загрузка...";
     const errorText = "Ошибка. Попробуйте еще раз!";
     const unvalidText = "Проверьте введенные данные!";
-    const successText = "Спасибо! Менеджер с нами свяжется!";
+    const successText = "Спасибо! Менеджер с вами свяжется!";
 
     let success = true;
 
