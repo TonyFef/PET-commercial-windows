@@ -126,10 +126,6 @@ export const saleValidation = () => {
                         statusBlock.textContent = errorText;
                     });
             }
-            //  else {
-            //     // alert("Данные не валидны!");
-            //     // statusBlock.textContent = errorText;
-            // }
         };
 
         try {

@@ -56,6 +56,4 @@ export const calc = () => {
             }
         });
     }
-
-    // console.log(calcBlock);
 };
