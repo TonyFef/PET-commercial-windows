@@ -1105,6 +1105,9 @@ p.services-image_mobile {
     left: 37%;
     z-index: 100;
 }
+.big-doc__img {
+    height: 100%;
+}
 .big-doc {
     width: 1vw;
     height: 1vh;
