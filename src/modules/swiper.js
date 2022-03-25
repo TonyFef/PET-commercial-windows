@@ -1,12 +1,13 @@
 export const swiper = (swiper1, swiper2) => {
     new Swiper(swiper1, {
         breakpoints: {
-            576: {
+            320: {
                 slidesPerView: 1,
+                spaceBetween: 10,
             },
-            768: {
-                slidesPerView: 2,
-                spaceBetween: 40,
+            576: {
+                slidesPerView: 3,
+                spaceBetween: 50,
             },
             1024: {
                 slidesPerView: 3,
