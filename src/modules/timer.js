@@ -36,10 +36,18 @@ export const timer = (deadline) => {
         }
 
         if (getTime.timeRemaining <= 0) {
-            timerDays.textContent = "00";
-            timerHours.textContent = "00";
-            timerMinutes.textContent = "00";
-            timerSeconds.textContent = "00";
+            for (let span of timerDays) {
+                span.textContent = "00";
+            }
+            for (let span of timerHours) {
+                span.textContent = "00";
+            }
+            for (let span of timerMinutes) {
+                span.textContent = "00";
+            }
+            for (let span of timerSeconds) {
+                span.textContent = "00";
+            }
         }
 
         if (getTime.timeRemaining > 0) {
@@ -47,11 +55,18 @@ export const timer = (deadline) => {
         }
 
         for (let span of getHoursFormatDivs) {
-            span.childNodes[0].data = declOfNum(hours, [" Час: ", " Часа: ", " Часов: "]);
+            if (hours > 0) {
+                span.childNodes[0].data = declOfNum(hours, [" Час: ", " Часа: ", " Часов: "]);
+            } else {
+                span.childNodes[0].data = "Часов";
+            }
         }
-
         for (let span of getDaysFormatDivs) {
-            span.childNodes[0].data = declOfNum(days, [" День: ", " Дня: ", " Дней: "]);
+            if (days > 0) {
+                span.childNodes[0].data = declOfNum(days, [" День: ", " Дня: ", " Дней: "]);
+            } else {
+                span.childNodes[0].data = "Дней";
+            }
         }
         for (let span of getMinutesFormatDivs) {
             span.childNodes[0].data = declOfNum(minutes, [" Минута: ", " Минуты: ", " Минут: "]);

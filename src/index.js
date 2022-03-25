@@ -10,7 +10,7 @@ const swiper1 = ".benefits-inner";
 const swiper2 = ".swiper2";
 
 modal(overlay);
-timer("26 march 2022");
+timer("27 march 2022");
 swiper(swiper1, swiper2);
 saleValidation();
 smoothScroll();
