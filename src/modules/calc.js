@@ -19,19 +19,6 @@ export const calc = () => {
                 e.target.value = e.target.value.replace(/[\D+\-]/g, "");
             });
 
-            if (calcSquare.value && calcType.value) {
-                totalValue = calcSquareValue * calcTypeValue;
-
-                animate({
-                    duration: 250,
-                    timing(timeFraction) {
-                        return timeFraction;
-                    },
-                    draw(progress) {
-                        total.value = (+progress * totalValue).toFixed();
-                    },
-                });
-            }
             if (calcSquare.value && calcType.value && calcGlassValue) {
                 totalValue = calcGlassValue * calcSquareValue * calcTypeValue;
 
@@ -41,12 +28,13 @@ export const calc = () => {
                         return timeFraction;
                     },
                     draw(progress) {
-                        total.value = (+progress * totalValue).toFixed();
+                        total.value = (+progress * totalValue).toFixed(1);
                     },
                 });
             }
             if (calcSquareValue == "") {
-                total.value = 0;
+                let input = document.getElementById("calc-total");
+                total.value = input.placeholder;
             }
         };
 
