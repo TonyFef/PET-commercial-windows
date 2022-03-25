@@ -27,48 +27,66 @@ export const modal = (overlay) => {
             }
         });
 
-        docsImg.forEach((doc) => {
-            doc.addEventListener("mouseenter", (e) => {
-                const docLink = e.target.closest("a");
-                const overlay2 = docLink.querySelector(".document-overlay");
-                animate({
-                    duration: 150,
-                    timing(timeFraction) {
-                        return timeFraction;
-                    },
-                    draw(progress) {
-                        overlay2.style.opacity = progress;
-                    },
+        let tempScreenWidth = document.documentElement.clientWidth;
+        if (tempScreenWidth > 767) {
+            docsImg.forEach((doc) => {
+                doc.addEventListener("mouseenter", (e) => {
+                    const docLink = e.target.closest("a");
+                    const overlay2 = docLink.querySelector(".document-overlay");
+                    animate({
+                        duration: 150,
+                        timing(timeFraction) {
+                            return timeFraction;
+                        },
+                        draw(progress) {
+                            overlay2.style.opacity = progress;
+                        },
+                    });
+                });
+                doc.addEventListener("mouseleave", (e) => {
+                    const docLink = e.target.closest("a");
+                    const overlay2 = docLink.querySelector(".document-overlay");
+    
+                    animate({
+                        duration: 150,
+                        timing(timeFraction) {
+                            return timeFraction;
+                        },
+                        draw(progress) {
+                            overlay2.style.opacity = progress / progress - progress;
+                        },
+                    });
                 });
             });
-            doc.addEventListener("mouseleave", (e) => {
-                const docLink = e.target.closest("a");
-                const overlay2 = docLink.querySelector(".document-overlay");
+        }
+        //  else {
+        //     docsImg.forEach((doc) => {
 
-                animate({
-                    duration: 150,
-                    timing(timeFraction) {
-                        return timeFraction;
-                    },
-                    draw(progress) {
-                        overlay2.style.opacity = progress / progress - progress;
-                    },
-                });
-            });
-        });
+        //     })
+        // }
+
+        
     }
 
     for (let doc of docsForModal) {
-        doc.addEventListener("click", (e) => {
-            e.preventDefault();
+        let tempScreenWidth = document.documentElement.clientWidth;
 
-            let docModal = document.querySelector(".doc-div");
+        if (tempScreenWidth > 767) {
+            doc.addEventListener("click", (e) => {
+                e.preventDefault();
 
-            docModal.classList.add("show");
-            docModal.classList.remove("none");
-            overlay.style.display = "block";
-            fixWhenScrollModal();
-        });
+                let docModal = document.querySelector(".doc-div");
+
+                docModal.classList.add("show");
+                docModal.classList.remove("none");
+                overlay.style.display = "block";
+                fixWhenScrollModal();
+            });
+        } else {
+            doc.addEventListener("click", (e) => {
+                e.preventDefault();
+            });
+        }
     }
 
     overlay.addEventListener("click", (e) => {
