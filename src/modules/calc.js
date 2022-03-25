@@ -1,4 +1,4 @@
-import { animate } from "./helpers";
+// import { animate } from "./helpers";
 
 export const calc = () => {
     const calcBlock = document.getElementById("calc");
@@ -21,16 +21,7 @@ export const calc = () => {
 
             if (calcSquare.value && calcType.value && calcGlassValue != NaN) {
                 totalValue = calcGlassValue * calcSquareValue * calcTypeValue * 1000;
-
-                animate({
-                    duration: 250,
-                    timing(timeFraction) {
-                        return timeFraction;
-                    },
-                    draw(progress) {
-                        total.value = (+progress * totalValue).toFixed();
-                    },
-                });
+                total.value = totalValue.toFixed();
             }
             if (calcSquareValue == "") {
                 let input = document.getElementById("calc-total");
