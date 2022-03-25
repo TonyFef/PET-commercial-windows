@@ -25,6 +25,18 @@ export const modal = (overlay) => {
                 overlay.style.display = "block";
                 fixWhenScrollModal();
             }
+
+            let targetParent = e.target.parentNode.parentNode;
+            let subjectPrev = targetParent.querySelector("h3");
+            let subject;
+
+            if (subjectPrev != null) {
+                subject = subjectPrev.textContent;
+            } else {
+                subject = "";
+            }
+
+            showName(subject);
         });
 
         let tempScreenWidth = document.documentElement.clientWidth;
@@ -46,7 +58,7 @@ export const modal = (overlay) => {
                 doc.addEventListener("mouseleave", (e) => {
                     const docLink = e.target.closest("a");
                     const overlay2 = docLink.querySelector(".document-overlay");
-    
+
                     animate({
                         duration: 150,
                         timing(timeFraction) {
@@ -64,8 +76,6 @@ export const modal = (overlay) => {
 
         //     })
         // }
-
-        
     }
 
     for (let doc of docsForModal) {
@@ -113,3 +123,11 @@ export const modal = (overlay) => {
         });
     }
 };
+
+let target2 = 0;
+export const showName = (target) => {
+    target2 = target;
+    return target;
+};
+
+export { target2 };

@@ -18,8 +18,8 @@ export const calc = () => {
             calcSquare.addEventListener("input", (e) => {
                 e.target.value = e.target.value.replace(/[\D+\-]/g, "");
             });
-
-            if (calcSquare.value && calcType.value && calcGlassValue) {
+            
+            if (calcSquare.value && calcType.value && calcGlassValue != NaN) {
                 totalValue = calcGlassValue * calcSquareValue * calcTypeValue;
 
                 animate({

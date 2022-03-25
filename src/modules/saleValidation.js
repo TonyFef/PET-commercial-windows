@@ -1,4 +1,6 @@
 import { closeWhenScrollModal } from "./helpers";
+import { target2 } from "./modal";
+import { showName } from "./modal";
 
 export const saleValidation = () => {
     const forms = document.getElementsByTagName("form");
@@ -69,7 +71,7 @@ export const saleValidation = () => {
     };
 
     for (let form of forms) {
-        const submitForm = () => {
+        const submitForm = (target) => {
             const formElements = form.querySelectorAll("input[type='text']");
             const formData = new FormData(form);
             let formBody;
@@ -86,12 +88,13 @@ export const saleValidation = () => {
             formData.forEach((val, key) => {
                 formBody[key] = val;
 
-                let link = window.location.href;
-                let linkModified = link.substr(link.length - 10);
+                formBody.subject = target2;
 
-                if (linkModified == "kuhni.html") {
+                let link = window.location.href;
+
+                if (link.includes("kuhni.html")) {
                     formBody.page = "Кухни";
-                } else if (linkModified == "lkony.html") {
+                } else if (link.includes("balkony.html")) {
                     formBody.page = "Балконы";
                 }
             });
@@ -137,7 +140,7 @@ export const saleValidation = () => {
                 e.preventDefault();
                 let inputs = form.querySelectorAll("input");
                 inputs.forEach((input) => (input.style.border = "1px solid #dfdfdf"));
-                submitForm();
+                submitForm(e.target);
             });
         } catch (error) {
             console.log(error.message);
