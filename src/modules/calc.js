@@ -20,7 +20,7 @@ export const calc = () => {
             });
 
             if (calcSquare.value && calcType.value && calcGlassValue != NaN) {
-                totalValue = calcGlassValue * calcSquareValue * calcTypeValue;
+                totalValue = calcGlassValue * calcSquareValue * calcTypeValue * 1000;
 
                 animate({
                     duration: 250,
@@ -28,7 +28,7 @@ export const calc = () => {
                         return timeFraction;
                     },
                     draw(progress) {
-                        total.value = (+progress * totalValue).toFixed(1);
+                        total.value = (+progress * totalValue).toFixed();
                     },
                 });
             }
