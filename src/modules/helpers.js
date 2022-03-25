@@ -17,18 +17,26 @@ const animate = ({ timing, draw, duration }) => {
     });
 };
 
+function disableScroll() {
+    // Get the current page scroll position
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    let scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+    // if any scroll is attempted, set this to the previous value
+    window.onscroll = function () {
+        window.scrollTo(scrollLeft, scrollTop);
+    };
+}
+
+function enableScroll() {
+    window.onscroll = function () {};
+}
+
 export const fixWhenScrollModal = () => {
-    let scrollY = window.scrollY;
-    document.body.style.position = "fixed";
-    document.body.style.top = `-${scrollY}px`;
-    
+    disableScroll();
 };
 
 export const closeWhenScrollModal = () => {
-    let scrollY = document.body.style.top;
-    document.body.style.position = "";
-    document.body.style.top = "";
-    window.scrollTo(0, parseInt(scrollY || "0") * -1);
+    enableScroll();
 };
 
 export { animate };
